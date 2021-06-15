@@ -22,7 +22,6 @@ def main():
 
     # ダウンロードしたデータからコーパスを作成
     file_list = glob.glob(raw_dir + 'json/*/*.json')
-    print('Writing...')
     write_data(file_list, output_dir)
     print('Done.')
 

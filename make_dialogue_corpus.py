@@ -66,6 +66,7 @@ def write_data(file_list, output_dir):
     assert len(src) == len(tar)
     # 書き込み
     print('source: 文数', len(src))
+    print('source: writing...')
     with open(output_dir + 'source.txt', 'w') as f:
         for s in src:
             f.write(s + '\n')
