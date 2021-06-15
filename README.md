@@ -11,7 +11,7 @@ source.txtには対話ペアデータの入力文、target.txtには対話ペア
 
 # 使い方の例
 ```bash
-git clone <URL>
+git clone https://github.com/tnka122/make-dbdc-dialogue-corpus.git
 cd make-dialogue-corpus
 python3 main.py
 ```
