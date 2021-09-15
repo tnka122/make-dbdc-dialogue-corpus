@@ -14,7 +14,6 @@ def make_pair_data(fname):
     us_tar = []
     # src: System, tar: User
     # システムの発話に対して人間が応答しているため正しい応答とし、すべての文を対話データに含める
-    # （文脈を考慮してないため少し暴論）
     su_src = []
     su_tar = []
     with open(fname, 'rb') as f:
@@ -30,7 +29,7 @@ def make_pair_data(fname):
             ann_list = []
             for ann in turn['annotations']:
                 ann_list.append(ann['breakdown'])
-            # 対話破綻ではないと判定している人が半数以上であればデータに含める
+            # 対話破綻ではないと判定している人が閾値以上であればデータに含める
             if ann_list.count('O') / len(ann_list) > threshold:
                 us_src.append(pre_user_uttr)
                 us_tar.append(turn['utterance'])
